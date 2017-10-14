@@ -5,21 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>100Points</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+
   <link rel="stylesheet" href="/static/css/index.css">
   <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico">
-  <h1 id="heading">100Points</h1>
+</head>
+<body>
+  <!-- <h1 id="heading">100Points</h1> -->
+
   <div class="wrap">
-    <div class="student">
+    <nav>
+      <a href="/"><h1>100Points</h1></a>
+      <a href="https://www.hacktothefuture.de/de/startseite/" target="_blank">
+        <img src="https://www.hacktothefuture.de/fileadmin/_processed_/csm_HTTF_Logo_web_126d20ca25.jpg">
+      </a>
+    </nav>
+
+    <div class="info-area">
       <div class="box">
-        <p>Oft fällt es uns Schülern schwer Vokabeln zu lernen. Mit unserer Plattform 100Points macht es Spaß sich mit anderen Schülern deiner Klasse zu challengen und dabei einen positiven Lerneffekt zu haben. Erhalte jeden Tag bis zu 100 Punkte, indem Du nur 10 Vokabeln lernst.</p>
-        <a class="button-link" href="/learn/">Schüler</a>
+        <p id="opening-sentence">Lerne Vokabeln unterwegs mit deinem Smartphone und challenge dich dabei mit deinen Mitschülern.</p>
+
+        <p id="info-text">Oft fällt es uns Schülern schwer Vokabeln zu lernen. Mit unserer Plattform 100Points macht es Spaß sich mit anderen Schülern deiner Klasse zu challengen und dabei einen positiven Lerneffekt zu haben. Erhalte jeden Tag bis zu 100 Punkte. Dein Lehrer gibt die Vokabeln jeden Tag vor und alle deine Klassenkameraden und Du erhalten dieselben Vokabeln.</p>
+
+        <div id="buttons">
+          <a class="button-link" href="/learn/">Schüler</a>
+          <a class="button-link" href="/teach/">Lehrer</a>
+        </div>
       </div>
     </div>
-    <div class="teacher">
-      <div class="box">
-        <p>Mit unserer Plattform 100Points motivieren Sie ihre Schüler jeden Tag Vokabeln zu lernen. Ihre Schüler fühlen sich herausgefordert jeden Tag 10 Vokabeln zu lernen, in dem sie sich mit Klassenkameraden verleichen können. Sie müssen nur 10 Vokabeln vorgeben, die alle Schüler lernen.</p>
-        <a class="button-link" href="/teach/">Lehrer</a>
-      </div>
+    <div class="smartphone-area">
+      <img id="smartphone" src="/static/img/screenshot1.png" alt="">
     </div>
 </div>
 </body>
