@@ -22,6 +22,12 @@ vocabulary = {"2017.10.14":
         ]
     }
 
+statistics = [
+    {"name": "Person A", "points": 40},
+    {"name": "Person B", "points": 30},
+    {"name": "Person C", "points": 100}
+]
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -64,6 +70,20 @@ def post_vocabulary():
     ]
     return jsonify(vocabulary)
 
+@app.route("/api/statistics/", methods=["GET"])
+def get_statistics():
+    return jsonify(statistics)
+
+
+@app.route("/api/statistics/", methods=["POST"])
+def post_statistics():
+    statistics.append({
+        "name": request.form.get("name"),
+        "points": str(request.form.get("points"))
+    })
+
+    # TODO: Sort statistics
+    return jsonify(statistics)
 
 if __name__ == "__main__":
     app.run(debug=True)
