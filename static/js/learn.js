@@ -11,13 +11,30 @@ $(document).ready(function () {
   }).done(function (data) {
     vocabulary = data;
 
+    // Set first question
     $('#question').text(vocabulary[step].question);
   });
 
   $('#continue').click(function () {
+    continueInterrogation();
+  });
+
+  $('#input-answer').keypress(function (event) {
+    // Bind press enter
+    if (event.which === 13) {
+        continueInterrogation();
+    }
+  });
+
+  function continueInterrogation() {
+    // Get user answer and right answer
     var answer = $('#input-answer').val();
     var rightAnswer = vocabulary[step].answer;
 
+    // Show answer
+    $('#answer').css('display', 'block');
+
+    // Right answer
     if (answer == rightAnswer) {
       $('#answer').html('Richtig');
       $('#answer').css('color', 'rgb(48, 180, 43)');
@@ -26,6 +43,7 @@ $(document).ready(function () {
       points += 10;
 
     } else {
+      // Wrong answer
       $('#answer').html('Falsch: ' + rightAnswer);
       $('#answer').css('color', 'rgb(125, 27, 26)');
     }
@@ -39,23 +57,23 @@ $(document).ready(function () {
       $('#answer').html('Punkte: ' + points);
       $('#answer').css('color', 'rgb(68, 150, 130)');
 
+      $('#whats-your-name #points').text(points);
       $('#whats-your-name').show();
     } else {
       // Set next one
       $('#question').text(vocabulary[step].question);
       $('#input-answer').val('');
     }
+  }
 
-  });
-
-  $('#name-submit').click(function () {
+  function submitName() {
     $('#whats-your-name').hide();
     $('#statistics').show();
 
     // Post data to api
     $.ajax({
       data: {
-        name: $('#name').val(),
+        name: $('#input-name').val(),
         points: points,
       },
       type: 'POST',
@@ -63,11 +81,19 @@ $(document).ready(function () {
     }).done(function (data) {
       if (data.error) {
         // TODO: Show error
-        console.log('Error');
       } else {
+        // For every statistic
         for (i = 0; i < data.length; i++) {
-          // TODO: Highlight personal statistic
-          var statisticField = '<div class="statistic-field">';
+          // Check whether it is the personal statistic
+          if (data[i].name == $('#input-name').val()) {
+            // Highlight personal statistic
+            var isPersonalStatistic = 'id="personal-statistic" ';
+          } else {
+            var isPersonalStatistic = '';
+          }
+
+          // Add statistic to list
+          var statisticField = '<div ' + isPersonalStatistic + 'class="statistic-field">';
           statisticField += '<p class="statistic-name">' + data[i].name + '</p>';
           statisticField += '<p class="statistic-points">' + data[i].points  + '</p>';
           statisticField += '</div>';
@@ -75,5 +101,16 @@ $(document).ready(function () {
         }
       }
     });
+  }
+
+  $('#input-name').keypress(function (event) {
+    // Bind press enter
+    if (event.which === 13) {
+      submitName();
+    }
+  });
+
+  $('#name-submit').click(function () {
+    submitName();
   });
 });

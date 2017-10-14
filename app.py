@@ -52,8 +52,11 @@ def get_vocabulary():
 def post_vocabulary():
     date = str(datetime.datetime.now().strftime("%Y.%m.%d"))
 
-    # TODO: Check whether all fields have a value
-    # fields = ["question1", "question1", "question1", "question1", "question1", "question1", "question1", "question1", "question1", ]
+    # Check whether all fields have a value
+    for i in ["answer", "question"]:
+        for j in range(1, 11):
+            if not request.form.get(i + str(j)):
+               return jsonify({"error": "Nicht alles ausgefüllt"})
 
     vocabulary[date] = [
         {"question": request.form.get("question1"), "answer": request.form.get("answer1")},
@@ -70,20 +73,23 @@ def post_vocabulary():
     ]
     return jsonify(vocabulary)
 
-@app.route("/api/statistics/", methods=["GET"])
-def get_statistics():
-    return jsonify(statistics)
-
 
 @app.route("/api/statistics/", methods=["POST"])
 def post_statistics():
+    # Append new statistic to list
     statistics.append({
         "name": request.form.get("name"),
-        "points": str(request.form.get("points"))
+        "points": int(request.form.get("points"))
     })
 
-    # TODO: Sort statistics
-    return jsonify(statistics)
+    # Create copy of statisics
+    copied_statistics = statistics[:]
+
+    # Sort statistics
+    copied_statistics.sort(key=lambda d: (d['points']))
+    copied_statistics = copied_statistics[::-1]
+
+    return jsonify(copied_statistics)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+input {
+  width: 40%;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .alert {
@@ -15,7 +13,7 @@ html, body {
 }
 
 #alert-success, #alert-success {
-  border: 3px solid rgb(66, 181, 131);
+  border: 3px solid rgb(93, 146, 177);
 }
 
 #alert-error, #alert-error {

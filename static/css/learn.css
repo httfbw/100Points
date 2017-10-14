@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+input {
+  width: 75%;;
+  height: 20px;
+  margin-bottom: 5px;
+  padding: 4px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+#answer {
+  display: none;
+}
+
+#whats-your-name, #statistics {
+  display: none;
 }
 
 .statistic-field {
