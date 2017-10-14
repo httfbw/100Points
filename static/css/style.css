@@ -55,3 +55,23 @@ h3:hover {
 .button:hover {
   background-color: rgb(40, 98, 133);
 }
+
+/* Mobile View */
+@media (max-width: 750px) {
+  body, html {
+    background: white;
+  }
+
+  main {
+    padding: 5px !important;
+  }
+
+  input {
+    width: 100% !important;
+  }
+
+  .button {
+    width: 100%;
+    padding: 15px 0;
+  }
+}

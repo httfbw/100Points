@@ -10,22 +10,18 @@ html, body {
   position: absolute;
   display: inline-block;
   width: 100%;
-font-family: monospace;
-text-shadow: 4em, 4em, 4em;
+  font-family: monospace;
+  text-shadow: 4em, 4em, 4em;
   text-align: center;
-  color:black;
   font-size: 5em;
+  color: rgb(93, 146, 177);
 }
 
 .wrap {
   width: 100%;
   overflow:auto;
 }
-.Background {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#ff00 ,#784BA0, #2B86C5);
-}
+
 .student {
   float:left;
   width: 50%;
@@ -54,11 +50,17 @@ background-image: linear-gradient(90deg, #784BA0 , #2B86C5);
 .button-link {
   color: white;
   text-decoration: none;
-  background-color: rgb(217, 30, 50);
   margin: 0 auto;
   text-align: center;
   padding: 20px 50px;
   font-size: 2em;
   margin-top: 20px;
   display: block;
+  background-color: rgb(93, 146, 177);
+  color: white;
+  cursor: pointer;
+}
+
+.button-link:hover {
+  background-color: rgb(40, 98, 133);
 }

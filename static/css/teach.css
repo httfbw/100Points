@@ -39,3 +39,10 @@ input {
 .closebtn:hover {
   color: black;
 }
+
+/* Mobile View */
+@media (max-width: 750px) {
+  .alert {
+    width: 100%;
+  }
+}

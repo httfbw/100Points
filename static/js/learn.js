@@ -1,13 +1,12 @@
 var vocabulary;
 var step = 0;
 var points = 0;
-var url = 'https://171373d7.ngrok.io';
 
 $(document).ready(function () {
   // Post data to api
   $.ajax({
     type: 'GET',
-    url: url + '/api/vocabulary/',
+    url: '/api/vocabulary/',
   }).done(function (data) {
     vocabulary = data;
 
@@ -77,7 +76,7 @@ $(document).ready(function () {
         points: points,
       },
       type: 'POST',
-      url: url +  '/api/statistics/',
+      url: '/api/statistics/',
     }).done(function (data) {
       if (data.error) {
         // TODO: Show error
