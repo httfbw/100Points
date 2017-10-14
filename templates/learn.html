@@ -8,77 +8,33 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="/static/js/learn.js"></script>
-  <style>
-
-  body {
-        background-image: url("muss noch ein bild suchen  ");
-
-
-}
-    #Eingabe {
-      text-align: center;
-    }
-    #Überschrift {
-      background-color: #0489B1;
-      text-align: center;
-        font-family: monospace;
-        text-shadow: 2px 2px 4px #999;
-        font-size: 50px;
-    }
-    #Schüler {
-      text-align:center;
-    }
-    #Vokabeln {
-      text-align: left;
-      font-size: 50px;
-    }
-    #LOGO {
-      position: relative;
-      top: -120px;
-    }
-    #Home {
-    position: relative;
-    top: -85px;
-
-    }
-
-
-  </style>
-
-  <style type="text/css">
-div.bg {
-}
-</style>
-
 </head>
 <body>
-  <h1 id="Überschrift">100 POINTS<h1>
+  <nav>
+    <a href="/"><h1>100Points<h1></a>
+    <img src="https://www.hacktothefuture.de/fileadmin/_processed_/csm_HTTF_Logo_web_126d20ca25.jpg">
+  </nav>
 
+  <main>
+    <div id="interrogation">
+      <h3>Abfrage</h3>
+      <p>Was bedeutet <strong id="question">...</strong>?</p>
+      <input id="input-answer" placeholder="Antwort"><br>
+      <a id="continue" class="button">Weiter</a>
+      <p id="answer" display="None">Richtig / Falsch</p>
+    </div>
 
-  <section id "Hintergrund">
+    <div id="whats-your-name">
+      <h3>Wie heißt Du?</h3>
+      <input id="name" type="text" placeholder="Dein Name">
+      <a id="name-submit" class="button">Fertig</a>
+    </div>
 
-  <p><a href="https://www.hacktothefuture.de/de/startseite/hackathon-stuttgart/" style="float:right" "float:top" id= "LOGO" ><img src="https://www.hacktothefuture.de/fileadmin/_processed_/csm_HTTF_Logo_web_126d20ca25.jpg" alt="some_text"hight="100" width="100" >
-  <p><a href="index.html" id= "Home"> <img src="/static/img/Button_Home.png" alt="Home Button" /></a></p>
+    <div id="statistics">
+      <h3>Statistiken</h3>
+    </div>
+  </main>
 
-  <h1 id="Schüler"><u>Schüler</u></h1>
-
-  <div id="interrogation">
-    <p>Was bedeutet <strong id="question">...</strong>?</p>
-    <input id="input-answer"><br>
-    <button id="continue">Weiter</button>
-    <p id="answer" display="None">Richtig / Falsch</p>
-  </div>
-
-  <div id="whats-your-name" style="display: none">
-    <h4>Wie heißt Du?</h4>
-    <input id="name" type="text" placeholder="Dein Name">
-    <button id="name-submit">Fertig</button>
-  </div>
-
-  <div id="statistics" style="display: none">
-    <h4>Statistiken</h4>
-
-  </div>
 
 
 
