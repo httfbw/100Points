@@ -1,12 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lehren - 100Points</title>
+
+  <link rel="stylesheet" href="/static/css/teach.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/teach.js"></script>
+
+  <style>
+  #Überschrift {
+
+    background-color: #0489B1;
+
+    text-align: center;
+      font-family: monospace;
+      text-shadow: 2px 2px 4px #999;
+      font-size: 50px;
+  }
+  </style>
+
 </head>
 <body>
-  <h1>Lehren</h1>
+
+  <h1 id="Überschrift">100 POINTS<h1>
+  <section id "Hintergrund">
+
+  <p style="float:right;"  ><img src="http://www.hackathon-stuttgart.de/wordpress/wp-content/uploads/2015/12/hackathon-logo@2x.png" alt="some_text"hight="50" width="200" >
+
+  <p><a href="index.html"> Home</a></p>
+
+  <h1><u>Lehrer</u></h1>
+
+  <div id="alert-success" class="alert" style="display: none;">
+    <span class="closebtn">&times;</span>
+    <p></p>
+  </div>
+
+  <div id="alert-error" class="alert" style="display: none;">
+    <span class="closebtn">&times;</span>
+    <p></p>
+  </div>
+
+  <h2>Vokabeln eingeben:</h2>
+
+  <input id="question-1" type="text" name="" value="" placeholder="Frage">
+  <input id="answer-1"type="text" name="" value="" placeholder="Antwort">
+  <br>
+  <input id="question-2" type="text" name="" value="">
+  <input id="answer-2"type="text" name="" value="">
+  <br>
+  <input id="question-3" type="text" name="" value="">
+  <input id="answer-3"type="text" name="" value="">
+  <br>
+  <input id="question-4" type="text" name="" value="">
+  <input id="answer-4"type="text" name="" value="">
+  <br>
+  <input id="question-5" type="text" name="" value="">
+  <input id="answer-5"type="text" name="" value="">
+  <br>
+  <input id="question-6" type="text" name="" value="">
+  <input id="answer-6"type="text" name="" value="">
+  <br>
+  <input id="question-7" type="text" name="" value="">
+  <input id="answer-7"type="text" name="" value="">
+  <br>
+  <input id="question-8" type="text" name="" value="">
+  <input id="answer-8"type="text" name="" value="">
+  <br>
+  <input id="question-9" type="text" name="" value="">
+  <input id="answer-9"type="text" name="" value="">
+  <br>
+  <input id="question-10" type="text" name="" value="">
+  <input id="answer-10"type="text" name="" value="">
+  <br>
+
+<button id="submit-teach-form" type="submit">Bestätigen</button>
+
 </body>
 </html>
