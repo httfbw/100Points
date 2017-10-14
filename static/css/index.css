@@ -102,3 +102,33 @@ align-items: center;
   display: block;
   margin-top: 10px auto 0 auto;
 }
+
+/* Mobile View */
+@media (max-width: 750px) {
+  .info-area {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+  }
+
+  .smartphone-area {
+    width: 100%;
+    height: auto;
+  }
+
+  #info-text {
+    margin: 10px 0;
+  }
+
+  .button-link {
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #smartphone {
+    width: 95%;
+    display: inline;
+    margin: 0;
+  }
+}
