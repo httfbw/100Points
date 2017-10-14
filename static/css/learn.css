@@ -1,0 +1,23 @@
+.statistic-field {
+  background: rgb(102, 102, 102);
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#personal-statistic {
+  background-color: rgb(33, 108, 150)
+}
+
+.statistic-name {
+  display: inline-block;
+}
+
+.statistic-points {
+  display: inline-block;
+  float: right;
+}
