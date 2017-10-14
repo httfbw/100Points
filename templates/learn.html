@@ -1,55 +1,45 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)file:///C:/Users/smz/100Points/templates/teach.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lehren - 100Points</title>
-<style>
+  <title>Lernen - 100Points</title>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/learn.js"></script>
+  <style>
+    #Eingabe {
+      text-align: center;
+    }
+    #Überschrift {
+      background-color: #0489B1;
 
-#Eingabe
-{
-    text-align: center;
+      text-align: center;
+        font-family: monospace;
+        text-shadow: 2px 2px 4px #999;
+        font-size: 50px;
+    }
+    #Schüler {
+      text-align:center;
+    }
 
-
-}
-
- #Schüler
- {
-    text-align:center;
-  }
-
-
-#Vokabeln{
-
-text-align: left
-
-
-
-}
-
-
+    #Vokabeln {
+      text-align: left
+    }
   </style>
 </head>
-<p><a href="index.html">Home</a></p>
 <body>
-  <p style="float:right;"  ><img src="http://www.hackathon-stuttgart.de/wordpress/wp-content/uploads/2015/12/hackathon-logo@2x.png" alt="some_text"hight="50" width="200" >
+  <h1 id="Überschrift">100 POINTS<h1>
+    <section id "Hintergrund">
+  <p><a href="index.html"> <img src="/static/img/Button_Home.png" alt="Home Button" /></a></p>
+  <p style="float:right;"><img src="http://www.hackathon-stuttgart.de/wordpress/wp-content/uploads/2015/12/hackathon-logo@2x.png" alt="some_text"hight="50" width="200" >
   <h1 id="Schüler">Schüler</h1>
-  <p style="font-size:50pt;">
   <h2 id="Eingabe">Eingabe für Schüler</h2>
-  <p style="font-size:50pt;">
-  <h3 id="Vokabeln"> Vokabel Eingabe</h3>
-  <p style="font-size:20pt;">
-  <input type="text" name="spind" value="">
-  <input type="submit" value="Eingabe"
+  <div id="interrogation">
+    <p>Was bedeutet <strong id="question">...</strong>?</p>
+    <input id="input-answer"><br>
+    <button id="continue">Weiter</button>
+  </div>
 
-
-
-
-
-
-
-
-
-</body></html>
+  <p id="answer" display="None">Richtig / Falsch</p>
+</body>
+</html>
