@@ -18,6 +18,9 @@ $(document).ready(function () {
     var answer = $('#input-answer').val();
     var rightAnswer = vocabulary[step].answer;
 
+    // Show answer
+    $('#answer').css('display', 'block')
+
     if (answer == rightAnswer) {
       $('#answer').html('Richtig');
       $('#answer').css('color', 'rgb(48, 180, 43)');
