@@ -4,6 +4,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lernen - 100Points</title>
 
+  <link rel="stylesheet" href="/static/css/learn.css">
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="/static/js/learn.js"></script>
   <style>
@@ -61,8 +63,21 @@ div.bg {
     <p>Was bedeutet <strong id="question">...</strong>?</p>
     <input id="input-answer"><br>
     <button id="continue">Weiter</button>
+    <p id="answer" display="None">Richtig / Falsch</p>
   </div>
 
-  <p id="answer" display="None">Richtig / Falsch</p>
+  <div id="whats-your-name" style="display: none">
+    <h4>Wie heißt Du?</h4>
+    <input id="name" type="text" placeholder="Dein Name">
+    <button id="name-submit">Fertig</button>
+  </div>
+
+  <div id="statistics" style="display: none">
+    <h4>Statistiken</h4>
+
+  </div>
+
+
+
 </body>
 </html>
