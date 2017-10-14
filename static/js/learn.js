@@ -34,7 +34,7 @@ $(document).ready(function () {
     $('#answer').css('display', 'block');
 
     // Right answer
-    if (answer == rightAnswer) {
+    if (answer.toLowerCase() == rightAnswer.toLowerCase()) {
       $('#answer').html('Richtig');
       $('#answer').css('color', 'rgb(48, 180, 43)');
 
