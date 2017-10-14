@@ -2,7 +2,7 @@ var currentScreenshot = 1;
 
 $(window).ready(function functionName() {
   setInterval(function () {
-    $('#smartphone').fadeOut(500, function () {
+    $('#smartphone').fadeOut(700, function () {
       if (currentScreenshot == 1) {
 
         $('#smartphone').attr('src', '/static/img/screenshot2.png');
@@ -13,6 +13,6 @@ $(window).ready(function functionName() {
       }
     });
 
-    $('#smartphone').fadeIn(500);
+    $('#smartphone').fadeIn(700);
   }, 5000);
 });
