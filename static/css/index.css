@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#heading {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 5em;
+}
+
+.wrap {
+  width: 100%;
+  overflow:auto;
+}
+
+.student {
+  float:left;
+  width: 50%;
+  background: rgb(93, 146, 177);
+  height: 100vh;
+}
+
+.teacher {
+  float: right;
+  background: rgb(101, 191, 80);
+  height: 100vh;
+  width: 50%;
+}
+
+.box {
+  padding-top: 250px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.box p {
+  font-size: 1.5em;
+  margin-bottom: 100px;
+}
+
+.button-link {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(217, 30, 50);
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 50px;
+  font-size: 2em;
+  margin-top: 20px;
+  display: block;
+}
