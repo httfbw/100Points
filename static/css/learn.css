@@ -39,3 +39,10 @@ input {
   display: inline-block;
   float: right;
 }
+
+/* Mobile View */
+@media (max-width: 750px) {
+  .statistic-field {
+    margin-bottom: 5px;
+  }
+}

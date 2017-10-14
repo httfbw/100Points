@@ -69,7 +69,6 @@ def post_vocabulary():
         {"question": request.form.get("question8"), "answer": request.form.get("answer8")},
         {"question": request.form.get("question9"), "answer": request.form.get("answer9")},
         {"question": request.form.get("question10"), "answer": request.form.get("answer10")}
-
     ]
     return jsonify(vocabulary)
 
@@ -92,4 +91,4 @@ def post_statistics():
     return jsonify(copied_statistics)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")

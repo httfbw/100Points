@@ -31,11 +31,11 @@ $(document).ready(function () {
       if (data.error) {
         $('#alert-error').fadeIn(500);
         $('#alert-error').css('display', 'block');
-        $('#alert-error p').append(data.error);
+        $('#alert-error p').html(data.error);
       } else {
         $('#alert-success').fadeIn(500);
         $('#alert-success').css('display', 'block');
-        $('#alert-success p').append('Vokabeln wurden erfolgreich geändert!');
+        $('#alert-success p').html('Vokabeln wurden erfolgreich geändert!');
       }
     });
   });
