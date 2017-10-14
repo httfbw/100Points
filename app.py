@@ -77,13 +77,20 @@ def get_statistics():
 
 @app.route("/api/statistics/", methods=["POST"])
 def post_statistics():
+    # Append new statistic to list
     statistics.append({
         "name": request.form.get("name"),
-        "points": str(request.form.get("points"))
+        "points": int(request.form.get("points"))
     })
 
-    # TODO: Sort statistics
-    return jsonify(statistics)
+    # Create copy of statisics
+    copied_statistics = statistics[:]
+
+    # Sort statistics
+    copied_statistics.sort(key=lambda d: (d['points']))
+    copied_statistics = copied_statistics[::-1]
+
+    return jsonify(copied_statistics)
 
 if __name__ == "__main__":
     app.run(debug=True)
