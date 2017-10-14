@@ -52,8 +52,11 @@ def get_vocabulary():
 def post_vocabulary():
     date = str(datetime.datetime.now().strftime("%Y.%m.%d"))
 
-    # TODO: Check whether all fields have a value
-    # fields = ["question1", "question1", "question1", "question1", "question1", "question1", "question1", "question1", "question1", ]
+    # Check whether all fields have a value
+    for i in ["answer", "question"]:
+        for j in range(1, 11):
+            if not request.form.get(i + str(j)):
+               return jsonify({"error": "Nicht alles ausgefüllt"})
 
     vocabulary[date] = [
         {"question": request.form.get("question1"), "answer": request.form.get("answer1")},
@@ -69,10 +72,6 @@ def post_vocabulary():
 
     ]
     return jsonify(vocabulary)
-
-@app.route("/api/statistics/", methods=["GET"])
-def get_statistics():
-    return jsonify(statistics)
 
 
 @app.route("/api/statistics/", methods=["POST"])
