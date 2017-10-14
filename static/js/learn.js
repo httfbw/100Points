@@ -16,12 +16,23 @@ $(document).ready(function () {
   });
 
   $('#continue').click(function () {
+    continueInterrogation();
+  });
+
+  $('#input-answer').keypress(function (event) {
+    // Bind press enter
+    if (event.which === 13) {
+        continueInterrogation();
+    }
+  });
+
+  function continueInterrogation() {
     // Get user answer and right answer
     var answer = $('#input-answer').val();
     var rightAnswer = vocabulary[step].answer;
 
     // Show answer
-    $('#answer').css('display', 'block')
+    $('#answer').css('display', 'block');
 
     // Right answer
     if (answer == rightAnswer) {
@@ -53,16 +64,16 @@ $(document).ready(function () {
       $('#question').text(vocabulary[step].question);
       $('#input-answer').val('');
     }
-  });
+  }
 
-  $('#name-submit').click(function () {
+  function submitName() {
     $('#whats-your-name').hide();
     $('#statistics').show();
 
     // Post data to api
     $.ajax({
       data: {
-        name: $('#name').val(),
+        name: $('#input-name').val(),
         points: points,
       },
       type: 'POST',
@@ -71,11 +82,10 @@ $(document).ready(function () {
       if (data.error) {
         // TODO: Show error
       } else {
+        // For every statistic
         for (i = 0; i < data.length; i++) {
-          // For every statistic
-
           // Check whether it is the personal statistic
-          if (data[i].name == $('#name').val()) {
+          if (data[i].name == $('#input-name').val()) {
             // Highlight personal statistic
             var isPersonalStatistic = 'id="personal-statistic" ';
           } else {
@@ -91,5 +101,16 @@ $(document).ready(function () {
         }
       }
     });
+  }
+
+  $('#input-name').keypress(function (event) {
+    // Bind press enter
+    if (event.which === 13) {
+      submitName();
+    }
+  });
+
+  $('#name-submit').click(function () {
+    submitName();
   });
 });
