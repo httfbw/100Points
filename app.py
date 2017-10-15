@@ -7,25 +7,24 @@ app = Flask(__name__)
 app.secret_key = "change"
 CORS(app)
 
-vocabulary = {"2017.10.15":
-        [
-            {"question": "Haus", "answer": "house"},
-            {"question": "Baum", "answer": "tree"},
-            {"question": "Computer", "answer": "computer"},
-            {"question": "Ente", "answer": "duck"},
-            {"question": "Hund", "answer": "dog"},
-            {"question": "Katze", "answer": "cat"},
-            {"question": "Schule", "answer": "school"},
-            {"question": "Apfel", "answer": "apple"},
-            {"question": "Banane", "answer": "banana"},
-            {"question": "Pfirsich", "answer": "peach"}
-        ]
-    }
+vocabulary = [
+    {"question": "Haus", "answer": "house"},
+    {"question": "Baum", "answer": "tree"},
+    {"question": "Computer", "answer": "computer"},
+    {"question": "Ente", "answer": "duck"},
+    {"question": "Hund", "answer": "dog"},
+    {"question": "Katze", "answer": "cat"},
+    {"question": "Schule", "answer": "school"},
+    {"question": "Apfel", "answer": "apple"},
+    {"question": "Banane", "answer": "banana"},
+    {"question": "Pfirsich", "answer": "peach"}
+]
+
 
 statistics = [
-    {"name": "Person A", "points": 40},
-    {"name": "Person B", "points": 30},
-    {"name": "Person C", "points": 100}
+    {"name": "Edmund", "points": 80},
+    {"name": "Silas", "points": 70},
+    {"name": "Manuel", "points": 50},
 ]
 
 @app.route("/")
@@ -45,19 +44,18 @@ def teach():
 
 @app.route("/api/vocabulary/", methods=["GET"])
 def get_vocabulary():
-    return jsonify(vocabulary[str(datetime.datetime.now().strftime("%Y.%m.%d"))])
+    return jsonify(vocabulary)
+
 
 @app.route("/api/vocabulary/", methods=["POST"])
 def post_vocabulary():
-    date = str(datetime.datetime.now().strftime("%Y.%m.%d"))
-
     # Check whether all fields have a value
     for i in ["answer", "question"]:
         for j in range(1, 11):
             if not request.form.get(i + str(j)):
                return jsonify({"error": "Nicht alles ausgefüllt"})
 
-    vocabulary[date] = [
+    vocabulary = [
         {"question": request.form.get("question1"), "answer": request.form.get("answer1")},
         {"question": request.form.get("question2"), "answer": request.form.get("answer2")},
         {"question": request.form.get("question3"), "answer": request.form.get("answer3")},
