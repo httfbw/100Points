@@ -47,7 +47,6 @@ def teach():
 def get_vocabulary():
     return jsonify(vocabulary[str(datetime.datetime.now().strftime("%Y.%m.%d"))])
 
-
 @app.route("/api/vocabulary/", methods=["POST"])
 def post_vocabulary():
     date = str(datetime.datetime.now().strftime("%Y.%m.%d"))
