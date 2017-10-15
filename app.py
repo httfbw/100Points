@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = "change"
 CORS(app)
 
-vocabulary = {"2017.10.14":
+vocabulary = {"2017.10.15":
         [
             {"question": "Haus", "answer": "house"},
             {"question": "Baum", "answer": "tree"},

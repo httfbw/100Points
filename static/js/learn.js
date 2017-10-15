@@ -45,6 +45,10 @@ $(document).ready(function () {
       // Wrong answer
       $('#answer').html('Falsch: ' + rightAnswer);
       $('#answer').css('color', 'rgb(125, 27, 26)');
+
+      // Play sound
+      var sound = new Audio('/static/sound/wrong-answer.mp3');
+      sound.play();
     }
 
     // Increase step
