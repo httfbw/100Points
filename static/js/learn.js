@@ -62,6 +62,16 @@ $(document).ready(function () {
 
       $('#whats-your-name #points').text(points);
       $('#whats-your-name').show();
+
+      if (points == 100) {
+        // Show confetti if users reaches 100 points
+        $('#confetti').css('visibility', 'visible');
+
+        // Hide confetti after 4 seconds
+        setTimeout(function () {
+          $('#confetti').css('visibility', 'hidden');
+        }, 4000);
+      }
     } else {
       // Set next one
       $('#question').text(vocabulary[step].question);
@@ -82,6 +92,9 @@ $(document).ready(function () {
       type: 'POST',
       url: '/api/statistics/',
     }).done(function (data) {
+      // Hide confetti
+      // $('#confetti').css('visibility', 'hidden');
+
       if (data.error) {
         // TODO: Show error
       } else {

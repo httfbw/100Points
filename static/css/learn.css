@@ -40,6 +40,16 @@ input {
   float: right;
 }
 
+#confetti{
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+  visibility: hidden;
+  transition: all 3s;
+}
+
 /* Mobile View */
 @media (max-width: 750px) {
   .statistic-field {
