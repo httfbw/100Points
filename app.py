@@ -49,12 +49,13 @@ def get_vocabulary():
 
 @app.route("/api/vocabulary/", methods=["POST"])
 def post_vocabulary():
+    global vocabulary
+
     # Check whether all fields have a value
     for i in ["answer", "question"]:
         for j in range(1, 11):
             if not request.form.get(i + str(j)):
                return jsonify({"error": "Nicht alles ausgefüllt"})
-
     vocabulary = [
         {"question": request.form.get("question1"), "answer": request.form.get("answer1")},
         {"question": request.form.get("question2"), "answer": request.form.get("answer2")},
